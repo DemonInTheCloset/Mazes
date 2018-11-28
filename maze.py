@@ -60,7 +60,7 @@ class Maze:
 
         print('\n'.join(text))
 
-    # Get Neighbours
+    # Get Neighbours ***Deprecated***
     # def _getNeighbours(self, x, y):
     #     neighbours = []
     #
@@ -77,31 +77,32 @@ class Maze:
     #     return neighbours
 
     # Remove Walls between cells
-    def removeWalls(self, cellA, cellB, tb=None):
+    def removeWalls(self, cellA, cellB):    # , tb=None):
         xdiff = cellA['x'] - cellB['x']
         ydiff = cellA['y'] - cellB['y']
 
-        # Check if adjacent
-        # samecell = xdiff == ydiff == 0
-        # not_adjacent1 = abs(xdiff) > 1 or abs(ydiff) > 1
-        # not_adjacent2 = (xdiff != 0) and (ydiff != 0)
-        #
-        # if (not_adjacent1 or not_adjacent2):
-        #     if (tb is not None):
-        #         string = [str(x) for x in tb[0]]
-        #         neighbours = '\n'.join(string)
-        #
-        #         string = [str(x) for x in tb[1]]
-        #         not_visited = '\n'.join(string)
-        #
-        #         print("Neighbours:\n{}\n\nNot Visited:\n{}".format(
-        #             neighbours, not_visited))
-        #
-        #     print("\n\nCellA: {}\nCellB: {}\n".format(cellA, cellB))
-        #     raise Exception("Cells not adjacent, can't remove walls")
-        #
-        # elif (samecell):
-        #     raise Exception("Same cell, can't remove walls")
+        Check if adjacent
+        samecell = xdiff == ydiff == 0
+        not_adjacent1 = abs(xdiff) > 1 or abs(ydiff) > 1
+        not_adjacent2 = (xdiff != 0) and (ydiff != 0)
+
+        if (not_adjacent1 or not_adjacent2):
+            # Traceback for debbugging purposes
+            # if (tb is not None):
+            #     string = [str(x) for x in tb[0]]
+            #     neighbours = '\n'.join(string)
+            #
+            #     string = [str(x) for x in tb[1]]
+            #     not_visited = '\n'.join(string)
+            #
+            #     print("Neighbours:\n{}\n\nNot Visited:\n{}".format(
+            #         neighbours, not_visited))
+
+            print("\n\nCellA: {}\nCellB: {}\n".format(cellA, cellB))
+            raise Exception("Cells not adjacent, can't remove walls")
+
+        elif (samecell):
+            raise Exception("Same cell, can't remove walls")
 
         if (ydiff == 0):
             if (xdiff == 1):
