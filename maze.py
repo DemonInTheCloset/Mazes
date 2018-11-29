@@ -81,7 +81,7 @@ class Maze:
         xdiff = cellA['x'] - cellB['x']
         ydiff = cellA['y'] - cellB['y']
 
-        Check if adjacent
+        # Check if adjacent
         samecell = xdiff == ydiff == 0
         not_adjacent1 = abs(xdiff) > 1 or abs(ydiff) > 1
         not_adjacent2 = (xdiff != 0) and (ydiff != 0)
