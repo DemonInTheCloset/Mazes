@@ -1,6 +1,6 @@
 # Mazes
 
-A python implementation of different maze generating and maze solving algorithms. Inspired by @CodingTrain and @shiffman.
+A python implementation of different maze generating and maze solving algorithms, programmed as a learning excercise. Inspired by @CodingTrain and @shiffman.
 
  - [Maze Object](#Maze-Object)
    - [Variables](#Variables)
